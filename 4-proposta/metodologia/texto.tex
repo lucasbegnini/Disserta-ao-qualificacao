@@ -1,0 +1,23 @@
+\section{Proposta}
+\label{proposta:metodologia}
+O objetivo principal da pesquisa é aplicar a otimização do EU-PRE dentro de um ambiente CDN validando-o através de um ambiente de simulação pré-existente.
+
+Será utilizado o simulador desenvolvido por \cite{stamos2010cdnsim} como base para aplicação de protocolos de CDN. Modificando-o, com a devida autorização dos criadores, em alguns pontos específicos que estão relacionados ao processo de criptografia. Verificando primeiro se já existe algum tipo de criptografia dentro do simulador para possíveis comparações futuras.
+Caso não haja nenhum será desenvolvido primeiro a proposta apresentada comparando-o com os valores sem criptografia para verificar o impacto do mesmo em situações desprotegidas.
+
+Para desenvolver a proposta são necessários os seguintes passos:
+\begin{enumerate}
+
+    \item \label{proposta:EstudoCDN} Estudo sobre CDN e as soluções de controle de acesso utilizadas;
+    \item \label{proposta:EstudoRecifragem} Estudo de recifragem de \emph{proxy}.
+    \item \label{proposta:AnaliseSim} Ánalise dos simuladores de CDN disponíveis e escolha de um deles;
+    \item \label{proposta:Atualizacao} Atualização (necessária) do simulador apresentado por \cite{stamos2010cdnsim} para versões mais recentes do OMNet++ [OMNet++];
+    \item \label{proposta:ValidacaoProcesso} Validação de processos criptográficos já existentes dentro do simulador;
+    \item \label{proposta:Desenvolvimento} Desenvolvimento do processo de recifragem por \emph{proxy} dentro do simulador;
+    \item \label{proposta:DefExperimentos} Definição de experimentos para validação da proposta;
+    \item \label{proposta:ValidacaoProposta} Validação da proposta;
+    \item \label{proposta:Publicacao} Publicação de resultados.
+
+\end{enumerate}
+
+Todo o processo será desenvolvido utilizando Python e C/C++ que são as linguagem aplicadas dentro do simulador [\cite{stamos2010cdnsim}].

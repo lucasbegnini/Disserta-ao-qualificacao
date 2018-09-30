@@ -1,0 +1,27 @@
+\chapter{Redes de distribuição de conteúdo}
+%\section{Composi\c{c}\~ao de uma \emph{Content Delivery Network}} 
+\label{sec:composicao}
+
+Para entendermos melhor uma Redes de distribuição de conteúdo (\emph{Content Delivery Network} - CDN), precisamos primeiro destrich\'a-la em v\'arios pequenos peda\c{c}os para assim compreendê-la em uma maneira global.
+
+Uma CDN apesar de ,abstratamente, ser vista como um mecanismo \'unico, pode ser vista tamb\'em como a soma de v\'arios tipos de elementos e caracter\'isticas que somadas e configuradas formar\'a um mecanismo \'unico e transparente aos usu\'arios.
+
+Fazem parte dessas caracter\'isticas: organiza\c{c}\~ao, tipos de servidores, protocolos e tipos de conte\'udo. Que serão detalhados nesse capítulo.
+
+\section{Visão Geral}
+
+\textcolor{red}{Generalizar CDNs em um paragrafo - Citar exemplos como Netflix, spotify e até serviços de noticias do android}
+
+Quanto a organiza\c{c}\~ao uma CDN pode ser uma rede unicamente CDN ou uma rede \textit{overlay}, que nada mais \'e que uma rede onde ela tenta abstrai as camadas de redes j\'a existentes(como transporte, redes entre outras) e transforma-l\'a em uma rede puramente CDN.
+
+Os tipos de conte\'udo que ir\~ao ser transportados dentro da rede s\~ao fundamentais para definir diversos aspectos de configura\c{c}\~oes que ser\~ao utilizadas dentro da rede. Como por exemplo, a forma de Cache que ser\~ao feitas os arquivos ou at\'e mesmo a forma como v\~ao ser distribu\'idos, se ser\~ao distribu\'idos em conjunto ou em partes. 
+
+\input{2-fundam/Composicao/tiposServidores.tex}
+\input{2-fundam/Composicao/protocolosInteracoes.tex}
+\input{2-fundam/Composicao/selecaoEntrega.tex}
+
+\section{Considerações Finais}
+
+Redes CDNs apesar de serem quase transparentes aos usuários não signfica que são simples. Como vimos possuem diversas características que devem ser levadas em consideração ao serem montadas ou estudadas. Em cada característica dessa é possível desenvolver diversos tipos de pesquisas.
+
+Nesse trabalho iremos focar somente na entrega do conteúdo desejado (\ref{section:selecaoentrega}). Especificamente quanto a entrega de conteúdo de VOD (\ref{subsubsection:vod_exemplo}).

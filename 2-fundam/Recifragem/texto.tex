@@ -1,0 +1,16 @@
+\chapter{Recifragem por \emph{Proxy}}
+Nesse capítulo iremos detalhar a respeito de recifragem por \emph{proxy} (\emph{Proxy ReEncryptation} - PRE), um esquema que permite a utilização de chaves privadas de multiplos usuários para decifrar uma mensagem cifrada por um usuário \emph{u}1 sem ser necessário recifrar essa a cada vez que um usuário diferente for utilizar a mesma. Na sessão \ref{recifragem:fundamentos} irão ser apresentados os principais fundamentos da recifragem por \emph{proxy}.
+
+% A seção \ref{recifragem:EU-PRE} irá falar sobre o \emph{Efficient Unidirectional Proxy Re-Encryption}, um esquema de recifragem por \emph{proxy} no qual é baseado a otimização proposta em \ref{recifragem:otimizacao}.
+
+
+\input{2-fundam/Recifragem/fundamentos/texto.tex}
+%\input{2-fundam/Recifragem/EU-PRE/texto.tex}
+%\input{2-fundam/Recifragem/Otimizacao/texto.tex}
+
+
+\section{Considerações Finais}
+
+Nesse capítulo vimos por linhas gerais o esquema de criptografia conhecido como recifragem por \emph{proxy}. Vimos também um método de otimização do mesmo que possibilita a retirada do servidor de \emph{proxy} sem perder a segurança e a característica principal do processo que é permitir que o conteúdo seja cifrado uma vez por $u1$ e decifrado por $n$ usuários sem que o mesmo tenha que cifrar novamente para esses $n$ usuários com suas respectivas chaves.
+
+Toda essa proposta pode se encaixar dentro de um ambiente de CDN. Facilitando que o conteúdo seja retrasmitido pela rede, ficando em vários servidores de ponta e estejam devidamente criptografados. E mesmo que essa base de usuários mude,como é o caso de fornecedoras de VOD, esse conteúdo não precisa ser novamente recifrado.

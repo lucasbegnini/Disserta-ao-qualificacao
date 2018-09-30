@@ -1,0 +1,24 @@
+% ######## init table ########
+
+\begin{table}[!htp]
+\begin{tabular}{|c|c|c|}
+\hline
+Propriedades & Valores & Descrição \\ \hline
+\multirow{Direção da delegação} & Unidirecional  & a  delegação $u1 \rightarrow u2$ não implica na delegação de $u2 \rightarrow u1$ \\ \cline{2-2}\cline{3-3} 
+& Bidirecional  & a delegação u1 → u2 implica na delegação de u2 → u1 \\ \hline
+
+\multirow{Número de saltos de recifragrem} & Único Salto \centering & somente mensagens originais podem ser recifradas \\ \cline{2-2}\cline{3-3} 
+& Multiplos Saltos \centering & uma mensagem recifrada de u1 → u2 pode ser novamente recifrada de u2 → u3 \\ \hline
+
+\multirow{Transitividade da chave de recifragem} & Transitivo & descrição transitivo \\ \cline{2-2}\cline{3-3} 
+& Intransitivo \centering & o proxy não pode, a partir de rk u1→u2 e rk u2→u3 ,produzir rk u1→u3 \\ \hline
+
+\multirow{Necessidade de iteração com o usuário} & Iterativo \centering & as chaves de recifragem são geradas por u1 com a necessidade de interações com u2 \\ \cline{2-2}\cline{3-3} 
+& Não iterativo \centering & as chaves de recifragem são geradas por u1 sem a necessidade de interações com u2 \\ \hline
+
+\multirow{Robustez contra conluio} & Robusto \centering & o usuário u2 e o proxy em conluio não conseguem recuperar a chave privada de u1 \\ \cline{2-2}\cline{3-3} 
+& Não robusto \centering & o usuário u2 e o proxy em conluio conseguem recuperar a chave privada de u1 \\ \hline
+\end{tabular}
+\caption{Propriedades dos esquemas de recifragem por \textit{proxy}}
+\label{table}
+\end{table}

@@ -1,0 +1,23 @@
+\section{Otimização do \textbf{EU-PRE}}
+\label{recifragem:otimizacao}
+No trabalho de \cite{mannes2016controle} propõe-se uma otimização do processo do EU-PRE (\ref{recifragem:EU-PRE}). A otimizição envolve as equações \ref{equation:eu-pre:recifragem}(Recifragem) e \ref{equation:eu-pre:decifragem}(Decifragem). No modelo tradicional o \emph{proxy} recebe do provedor as variáveis $(D,E,F,s)$ e a chave de recifragem $(rk_{c\rightarrow u},V,W)$ do conteúdo $c$ para o usuário $u$. E, após a validação com as variáveis $D$ e $E$ é inciado o processo de recifragem para o $u$ através da equação \ref{equation:eu-pre:decifra}.E assim, o \emph{proxy} envia ao usuário $u$ as informações $(E',F,V,W)$ onde $E'$ é a variável calculada na equação anterior. E assim, como visto na equação \ref{equation:eu-pre:recuperaConteudo}, recupera o conteúdo cifrado pelo provedor.
+\begin{equation}
+\label{equation:eu-pre:decifra}
+    E' = E^{rk_{c\rightarrow u}}\mod{p}
+\end{equation}
+\begin{equation}
+\label{equation:eu-pre:recuperaConteudo}
+    (m\parallel \omega) = F \oplus H_2({E'}^{h^{-1}\mod{p-1}} \mod{p})
+\end{equation}
+No trabalho é apresentado uma proposta de que essas duas operações sejam realizadas na mesma entidade, simplificando assim o processo de recifragem. Onde o usuário recebe o conteúdo diretamente do provedor. Essa operação é feita aplicando a variável $E$ diretamente na equação \ref{equation:eu-pre:decifra}. Eliminando a equação \ref{equation:eu-pre:decifra} ao substituir o $E'$ recebido do \emph{proxy}. Como podemos ver em \ref{equation:eu-pre:otimizacao}.
+\begin{equation} \label{equation:eu-pre:otimizacao}
+    \begin{split}
+        (m\parallel \omega) & = F \oplus H_2({({E}^{rk_{c\rightarrow u}})^{\frac{1}{h}\mod{p-1}}} \mod{p}) \\
+ & = F \oplus H_2({({E}^{rk_{c\rightarrow u{\frac{1}{h}\mod{p-1}}}})} \mod{p}) \\
+ & = F \oplus H_2({({E}^{{\frac{rk_{c\rightarrow u}}{h}\mod{p-1}}})} \mod{p})
+    \end{split}
+\end{equation}
+
+Com a equação final visualizada em \ref{equation:eu-pre:otimizacao} podemos ter um processo de recifragem por \emph{proxy} que possui no máximo o envolvimento de três entidades: o usuário, o provedor e uma infraestrutura responsável por delegar as chaves.
+
+A infraestura responsável por delegar as chaves pode ainda ser substituída/rodada no provedor do conteúdo simplificando ainda mais as entidades envolvidas para duas: o provedor e o usuário consumidor.

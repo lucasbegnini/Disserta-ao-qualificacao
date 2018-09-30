@@ -1,0 +1,11 @@
+\section{Contextualização}
+\label{proposta:justificativa}
+Com a demanda crescente da necessidade de conteúdo \emph{On-Demand} de áudio e vídeo através das plataformas de serviços de \emph{streaming} como \emph{Netflix}, \emph{Amazon Video Prime}, \emph{Spotify}, \emph{Deezer} e tantas outras que vem surgindo cada dia. Somado ao fato de que todas esses serviços estão ligados diretamente a algum tipo de serviço de CDN, pois todos estão em escala global mas absorvem particularidades locais de cada parte do mundo onde se encontram disponíveis. 
+
+É necessário que haja um processo de criptografia que possa ser menos custoso, ou seja, que faça menos requisições de chaves, quando comparado a outros métodos, pra evitar o máximo possível tráfego de informações na rede, e que permita a volatilidade de base de usuários que esses serviços tem, sem ter que se preocupar  com recifragem do conteúdo para cada usuário que sai/entra dentro do banco de serviços.
+
+Com isso, a proposta de recifragem por \emph{proxy}, se utilizada dentro de um ambiente de CDN, pode trazer benefícios à serviços como esse. Levaremos em conta as otimizações apresentada por \cite{mannes2016controle} que considera a supressão da entidade \emph{proxy} do sistema passando o processo de recifragem para o usuário que acumulará com o processo de decifragem.
+
+Ainda será necessário a presença do provedor cifrando o conteúdo transmitido. Mas essa cifragem ainda será feita apenas uma vez e a recifragens e decifragens necessárias serão feitas pelos $n$ que requisitarem o conteúdo.  
+
+O trabalho de \cite{mannes2016controle} segue uma abordagem muito semelhante mas aplica esses conceitos em um outro tipo de ambiente, o de Redes Centradas em Informações [\cite{redesCentradasInfo}].
