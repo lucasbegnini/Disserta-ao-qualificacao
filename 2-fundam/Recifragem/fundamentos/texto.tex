@@ -10,22 +10,22 @@ Neste sistema o usuário \emph{u}1 irá cifrar seu conteúdo uma vez e o enviar�
 \begin{figure}[H]
 \includegraphics[width=17cm]{Figuras/recifragemPorProxy.png}
 \caption{Recifragem por \emph{proxy} (\cite{mannes2016controle})} 
-\label{figura:contextualizacao} 
+\label{figura:RecifragemProxy} 
 \end{figure}
 
 Há algumas premissas de operações padrão do esquemas de recifragem por \emph{proxy}. A implementação dos mesmos vai depender do tipo de recifragem[\cite{ateniese2006improved}, \cite{chow2010efficient}]:
 
-\textit{Configuração:} recebe como entrada um parâmetro de segurança \emph{k} e tem como saída uma tupla de parâmetros globais. 
+\textbf{\textit{Configuração:}} Recebe como entrada um parâmetro de segurança $k$ e tem como saída uma tupla de parâmetros globais. 
 
-\textit{Geração de chaves:} gera os pares de chaves pública, \emph{pk}, e privada, \emph{sk}.
+\textbf{\textit{Geração de chaves:}} Gera os pares de chaves pública, $pk$, e privada, $sk$.
 
-\textit{Cifragem:} recebe pk(u1) e uma mensagem m, gera uma mensagem {m}pk(u1).
+\textbf{\textit{Cifragem:}} Recebe $pk_{(u1)}$ e uma mensagem $m$, gera uma mensagem $\{m\}_{pk_{(u1)}}$.
 
-\textit{Geração de chave de recifragem:} tem como entrada a chave privada sk(u1) e a chave pública pk(u2) e como saída uma chave de recifragem rku1!u2.
+\textbf{\textit{Geração de chave de recifragem:}} Tem como entrada a chave privada $sk_{(u1)}$ e a chave pública $pk_{(u2)}$ e como saída uma chave de recifragem $rk_{u1 \rightarrow u2}$.
 
-\textit{Recifragem:} recebe a chave de recifragem rku1!u2 e o texto cifrado {m}pk(u1) , tem como saída {m}pk(u2) .
+\textbf{\textit{Recifragem:}} Recebe a chave de recifragem $rk_{u1 \rightarrow u2}$ e o texto cifrado $\{m\}_{pk_{(u1)}}$ , tem como saída $\{m\}_{pk_{(u2)}}$.
 
-\textit{Decifragem} utilizando sk(u2) e {m}pk(u2) , gera como saída a mensagem m.
+\textbf{\textit{Decifragem:}} Utilizando $sk_{(u2)}$ e $\{m\}_{pk_{(u2)}}$, gera como saída a mensagem $m$.
 
 Afim de que o método seja considerado seguro foram incorporado diversas propriedades que respeitam 3 asserções básicas: (1) o \emph{proxy} não pode ser capaz de acessar o conteúdo da mensagem que recifra; (2) o usuário \emph{u}2 não pode obter o conteúdo da mensagem sem a interveção da função de recifragem; (3) O \emph{proxy} não pode, em hipótese nenhuma, obter as chaves privadas em posse das chave de recifragem e da mensagem cifrada[\cite{matsuo2007proxy},\cite{zhu2010new}].
 
